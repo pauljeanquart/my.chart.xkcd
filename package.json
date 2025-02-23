@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "chart.xkcd": "^1.1.15"
   },
   "devDependencies": {

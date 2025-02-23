@@ -1,1 +1,2 @@
-import './js-xkcd.js';
+import "bootstrap"
+import "./js-xkcd.js";

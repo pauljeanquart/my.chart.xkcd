@@ -130,3 +130,5 @@ dist
 .pnp.*
 app.bundle.min.js.map
 app.bundle.min.js
+app.bundle.min.css.map
+app.bundle.min.css
