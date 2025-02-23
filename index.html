@@ -52,9 +52,10 @@
     </nav>
 
     <div class="container my-5">
-        <h1>Hello, world!</h1>
+        <h1>chart.xkcd demo</h1>
         <div class="row">
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-6 px-0">
+                <h3>Bar</h3>
                 <svg class="js-xkcd js-xkcd-bar" data-js-config='{
                     "title": "Github stars VS patron number",
                     "xLabel": "Month",
@@ -65,8 +66,22 @@
                       "data": [100, 20]
                     }]
                   }' data-js-legend-position='upRight'></svg>
+                  <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-bar" data-js-config='{
+                        "title": "Github stars VS patron number",
+                        "xLabel": "Month",
+                        "yLabel": "Count"
+                      }' data-js-data='{
+                        "labels": ["github stars", "patrons"],
+                        "datasets": [{
+                          "data": [100, 20]
+                        }]
+                      }' data-js-legend-position='upRight'&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
-            <div class="col-lg-4 px-0">
+
+            <div class="col-lg-6 px-0">
+                <h3>Stacked</h3>
                 <svg class="js-xkcd js-xkcd-stacked" data-js-config='{
                     "title": "Issues and PR Submissions",
                     "xLabel": "Month",
@@ -95,9 +110,41 @@
                         ]
                     }
                 }' data-js-legend-position='upRight'></svg>
+                <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-stacked" data-js-config='{
+                        "title": "Issues and PR Submissions",
+                        "xLabel": "Month",
+                        "yLabel": "Count",
+                        "data": {
+                            "labels": [
+                                "Jan",
+                                "Feb",
+                                "Mar",
+                                "April",
+                                "May"
+                            ],
+                            "datasets": [
+                                {
+                                    "label": "Issues",
+                                    "data": [12, 19, 11, 29, 17]
+                                },
+                                {
+                                    "label": "PRs",
+                                    "data": [3, 5, 2, 4, 1]
+                                },
+                                {
+                                    "label": "Merges",
+                                    "data": [2, 3, 0, 1, 1]
+                                }
+                            ]
+                        }
+                    }' data-js-legend-position='upRight'&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
-            
-            <div class="col-lg-4 px-0">
+        </div>
+        <div class="row">
+            <div class="col-lg-6 px-0">
+                <h3>Pie</h3>
                 <svg class="js-xkcd js-xkcd-pie" data-js-config='{
                     "title": "What Tim is made of",
                     "data": {
@@ -108,10 +155,22 @@
                       "innerRadius": 0.6
                     }
                   }' data-js-legend-position='upRight'></svg>
+                  <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-pie" data-js-config='{
+                        "title": "What Tim is made of",
+                        "data": {
+                          "labels": ["a", "b", "e", "f", "g"],
+                          "datasets": [{"data": [500, 200, 80, 90, 100]}]
+                        },
+                        "options": {
+                          "innerRadius": 0.6
+                        }
+                      }' data-js-legend-position='upRight'&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 px-0">
+
+            <div class="col-lg-6 px-0">
+                <h3>Line</h3>
                 <svg class="js-xkcd js-xkcd-line" data-js-config='{
                     "title": "Monthly income of an indie developer",
                     "xLabel": "Month",
@@ -130,8 +189,31 @@
                       "yTickCount": 3
                     }
                   }' data-js-legend-position='upRight'></svg>
+                  <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-line" data-js-config='{
+                        "title": "Monthly income of an indie developer",
+                        "xLabel": "Month",
+                        "yLabel": "$ Dollars",
+                        "data": {
+                          "labels": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+                          "datasets": [{
+                            "label": "Plan",
+                            "data": [30, 70, 200, 300, 500, 800, 1500, 2900, 5000, 8000]
+                          }, {
+                            "label": "Reality",
+                            "data": [0, 1, 30, 70, 80, 100, 50, 80, 40, 150]
+                          }]
+                        },
+                        "options": {
+                          "yTickCount": 3
+                        }
+                      }' data-js-legend-position='upRight'&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
-            <div class="col-lg-4 px-0">
+        </div>
+        <div class="row">
+            <div class="col-lg-6 px-0">
+                <h3>XY</h3>
                 <svg class="js-xkcd js-xkcd-xy" data-js-config='{
                     "title": "Pokemon farms",
                     "xLabel": "Coordinate",
@@ -197,9 +279,77 @@
                       "dotSize": 1
                     }
                   }' data-js-legend-position="upRight"></svg>
+                  <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-xy" data-js-config='{
+                        "title": "Pokemon farms",
+                        "xLabel": "Coordinate",
+                        "yLabel": "Count",
+                        "data": {
+                          "datasets": [
+                            {
+                              "label": "Pikachu",
+                              "data": [
+                                {
+                                  "x": 3,
+                                  "y": 10
+                                },
+                                {
+                                  "x": 4,
+                                  "y": 122
+                                },
+                                {
+                                  "x": 10,
+                                  "y": 100
+                                },
+                                {
+                                  "x": 1,
+                                  "y": 2
+                                },
+                                {
+                                  "x": 2,
+                                  "y": 4
+                                }
+                              ]
+                            },
+                            {
+                              "label": "Squirtle",
+                              "data": [
+                                {
+                                  "x": 3,
+                                  "y": 122
+                                },
+                                {
+                                  "x": 4,
+                                  "y": 212
+                                },
+                                {
+                                  "x": -3,
+                                  "y": 100
+                                },
+                                {
+                                  "x": 1,
+                                  "y": 1
+                                },
+                                {
+                                  "x": 1.5,
+                                  "y": 12
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "options": {
+                          "xTickCount": 5,
+                          "yTickCount": 5,
+                          "showLine": false,
+                          "dotSize": 1
+                        }
+                      }' data-js-legend-position="upRight"&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
             
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-6 px-0">
+                <h3>Radar</h3>
                 <svg class="js-xkcd js-xkcd-radar" data-js-config='{
                     "title": "What Tim is made of",
                     "data": {
@@ -210,6 +360,18 @@
                       "innerRadius": 0.5
                     }
                   }'></svg>
+                  <code><pre>
+                    &lt;svg class="js-xkcd js-xkcd-radar" data-js-config='{
+                        "title": "What Tim is made of",
+                        "data": {
+                          "labels": ["a", "b", "e", "f", "g"],
+                          "datasets": [{"data": [500, 200, 80, 90, 100]}]
+                        },
+                        "options": {
+                          "innerRadius": 0.5
+                        }
+                      }'&gt;&lt;/svg&gt;
+                  </pre></code>
             </div>
         </div>
 
