@@ -1,1 +1,1 @@
-after cloning run npm i to install dependencies
+### run npm i to install dependencies
