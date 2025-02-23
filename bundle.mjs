@@ -7,5 +7,5 @@ await esbuild.build({
   bundle: true,
   minify: true,
   sourcemap: true,
-  outfile: 'out.js',
+  outfile: 'app.bundle.min.js',
 })
