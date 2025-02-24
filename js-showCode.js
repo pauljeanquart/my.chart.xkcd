@@ -4,7 +4,9 @@ export function initializeShowCode() {
     showCodeFor = document.getElementById(selectedElement.getAttribute('for'));
     selectedElement.innerHTML += replaceAngleBrackets(showCodeFor.outerHTML);
     selectedElement.addEventListener("click", (event) => {
-      navigator.clipboard.writeText(event.target.textContent);
+      const preElement = event.target.cloneNode(true);
+      [...preElement.childNodes].filter(x => x.nodeType !==3).forEach(x => x.remove());
+      navigator.clipboard.writeText(preElement.textContent);
       if (event.target.querySelector(".js-show-code-copied")) {
         event.target.querySelector(".js-show-code-copied").classList.remove("d-none");
         setTimeout(function () {
