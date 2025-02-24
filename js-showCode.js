@@ -3,7 +3,7 @@ export function initializeShowCode() {
   for (var i = 0, selectedElement; selectedElement = selectedElements[i]; i++) {
     showCodeFor = document.getElementById(selectedElement.getAttribute('for'));
     selectedElement.innerHTML = replaceAngleBrackets(showCodeFor.outerHTML);
-    selectedElement.closest(".user-select-all").addEventListener("click", (event) => {
+    selectedElement.addEventListener("click", (event) => {
       navigator.clipboard.writeText(event.target.textContent);
       event.target.parentNode.querySelector(".js-copied").classList.remove("d-none");
       setTimeout(function () {
