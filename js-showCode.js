@@ -1,11 +1,19 @@
+import prettier from "prettier/standalone.mjs";
+import prettierPluginHtml from "prettier/plugins/html.mjs";
+
 export function initializeShowCode() {
   const selectedElements = document.querySelectorAll('.js-show-code');
-  selectedElements.forEach( (selectedElement) => {
+  selectedElements.forEach((selectedElement) => {
     const showCodeFor = document.getElementById(selectedElement.getAttribute('for'));
-    selectedElement.innerHTML += replaceAngleBrackets(showCodeFor.outerHTML);
+    formatHtml(showCodeFor.outerHTML)
+      .then((result) => {
+        selectedElement.childNodes.forEach(c => c.nodeType === Node.TEXT_NODE && c.remove());
+        selectedElement.innerHTML += replaceAngleBrackets(result.trim());
+      });
+
     selectedElement.addEventListener("click", (event) => {
       const preElement = event.target.cloneNode(true);
-      [...preElement.childNodes].filter(x => x.nodeType !==3).forEach(x => x.remove());
+      [...preElement.childNodes].filter(x => x.nodeType !== 3).forEach(x => x.remove());
       navigator.clipboard.writeText(preElement.textContent);
       if (event.target.querySelector(".js-show-code-copied")) {
         event.target.querySelector(".js-show-code-copied").classList.remove("d-none");
@@ -21,7 +29,14 @@ export function initializeShowCode() {
 initializeShowCode();
 
 function replaceAngleBrackets(text) {
-  return text.replace(/[<>]/g, function(match) {
+  return text.replace(/[<>]/g, function (match) {
     return match === '<' ? '&lt;' : '&gt;';
+  });
+}
+
+function formatHtml(text) {
+  return prettier.format(text, {
+    parser: "html",
+    plugins: [prettierPluginHtml],
   });
 }
