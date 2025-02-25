@@ -2,7 +2,7 @@ import chartXkcd from 'chart.xkcd'; // https://www.npmjs.com/package/chart.xkcd
 
 export function initializeChartXkcd() {
   const selectedElements = document.querySelectorAll('.js-xkcd');
-  for (var i = 0, selectedElement; selectedElement = selectedElements[i]; i++) {
+  selectedElements.forEach( (selectedElement) =>  {
     const modifierClass = Array.from(selectedElement.classList).filter(c => c.startsWith('js-xkcd-'))[0].split('-').slice(2)[0];
     let config = {};
     try {
@@ -13,7 +13,7 @@ export function initializeChartXkcd() {
       }
       if (selectedElement.dataset.jsLegendPosition) {
         // downLeft, downRight, upLeft, upRight
-        if (!config.hasOwnProperty("options")) {
+        if (!Object.prototype.hasOwnProperty.call(config, "options")) {
           config.options = {};
         }
         config.options.legendPosition = chartXkcd.config.positionType[selectedElement.dataset.jsLegendPosition]
@@ -45,7 +45,7 @@ export function initializeChartXkcd() {
         console.error(`chart type based on modifier class '${modifierClass}' not implemented or not found!`);
         break;
     }
-  }
+  });
 }
 
 initializeChartXkcd();
