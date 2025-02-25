@@ -1,7 +1,7 @@
 export function initializeShowCode() {
   const selectedElements = document.querySelectorAll('.js-show-code');
-  for (var i = 0, selectedElement; selectedElement = selectedElements[i]; i++) {
-    showCodeFor = document.getElementById(selectedElement.getAttribute('for'));
+  selectedElements.forEach( (selectedElement) => {
+    const showCodeFor = document.getElementById(selectedElement.getAttribute('for'));
     selectedElement.innerHTML += replaceAngleBrackets(showCodeFor.outerHTML);
     selectedElement.addEventListener("click", (event) => {
       const preElement = event.target.cloneNode(true);
@@ -15,7 +15,7 @@ export function initializeShowCode() {
         }, 1000);
       }
     });
-  }
+  });
 }
 
 initializeShowCode();
@@ -25,4 +25,3 @@ function replaceAngleBrackets(text) {
     return match === '<' ? '&lt;' : '&gt;';
   });
 }
-
