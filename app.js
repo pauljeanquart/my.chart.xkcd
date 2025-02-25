@@ -1,3 +1,3 @@
 import "bootstrap"
-import "./js-showCode.js";
+import "./js-showCodeCard.js";
 import "./js-xkcd.js";

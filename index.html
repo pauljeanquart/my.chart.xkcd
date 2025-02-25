@@ -2,63 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>chart.xkcd demo</title>
-    <link href="app.bundle.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chart.xkcd demo</title>
+  <link href="app.bundle.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-    <div class="container my-5">
-        <h1>chart.xkcd demo</h1>
-        <h5>Demonstrate esbuild bundling and bootstrap style initialization with selector class, modifier class, and
-            data attributes</h5>
-        <div class="row">
-            <div class="col-lg-6 px-0">
-                <h3>Bar</h3>
-                <svg id="xkcdBar" class="js-xkcd js-xkcd-bar" data-js-config='{
+  <div class="container my-5">
+    <h1>chart.xkcd demo</h1>
+    <h5>Demonstrate esbuild bundling and bootstrap style initialization with selector class, modifier class, and
+      data attributes</h5>
+    <div class="row">
+      <div class="col-lg-6 px-0">
+        <h3>Bar</h3>
+        <svg id="xkcdBar" class="js-xkcd js-xkcd-bar" data-js-config='{
                     "title": "Github stars VS patron number",
                     "xLabel": "Month",
                     "yLabel": "Count"
@@ -68,17 +67,22 @@
                       "data": [100, 20]
                     }]
                   }' data-js-legend-position='upRight'></svg>
-                  <h6>CSS</h6>
-                  <p>None</p>
-                  <h6>HTML</h6>
-                  <pre class="js-show-code user-select-all text-danger" for="xkcdBar">
-                    <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                  </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdBar">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
+        </div>
+      </div>
 
-            <div class="col-lg-6 px-0">
-                <h3>Stacked</h3>
-                <svg id="xkcdStacked" class="js-xkcd js-xkcd-stacked" data-js-config='{
+      <div class="col-lg-6 px-0">
+        <h3>Stacked</h3>
+        <svg id="xkcdStacked" class="js-xkcd js-xkcd-stacked" data-js-config='{
                     "title": "Issues and PR Submissions",
                     "xLabel": "Month",
                     "yLabel": "Count",
@@ -106,18 +110,23 @@
                         ]
                     }
                 }' data-js-legend-position='upRight'></svg>
-                <h6>CSS</h6>
-                <p>None</p>
-                <h6>HTML</h6>
-                    <pre class="js-show-code user-select-all text-danger" for="xkcdStacked">
-                        <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                    </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdStacked">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
         </div>
-        <div class="row">
-            <div class="col-lg-6 px-0">
-                <h3>Pie</h3>
-                <svg id="xkcdPie" class="js-xkcd js-xkcd-pie" data-js-config='{
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 px-0">
+        <h3>Pie</h3>
+        <svg id="xkcdPie" class="js-xkcd js-xkcd-pie" data-js-config='{
                     "title": "What Tim is made of",
                     "data": {
                       "labels": ["a", "b", "e", "f", "g"],
@@ -127,17 +136,22 @@
                       "innerRadius": 0.6
                     }
                   }' data-js-legend-position='upRight'></svg>
-                  <h6>CSS</h6>
-                  <p>None</p>
-                  <h6>HTML</h6>
-                    <pre class="js-show-code user-select-all text-danger" for="xkcdPie">
-                        <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                    </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdPie">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
+        </div>
+      </div>
 
-            <div class="col-lg-6 px-0">
-                <h3>Line</h3>
-                <svg id="xkcdLine" class="js-xkcd js-xkcd-line" data-js-config='{
+      <div class="col-lg-6 px-0">
+        <h3>Line</h3>
+        <svg id="xkcdLine" class="js-xkcd js-xkcd-line" data-js-config='{
                     "title": "Monthly income of an indie developer",
                     "xLabel": "Month",
                     "yLabel": "$ Dollars",
@@ -155,18 +169,23 @@
                       "yTickCount": 3
                     }
                   }' data-js-legend-position='upRight'></svg>
-                  <h6>CSS</h6>
-                  <p>None</p>
-                  <h6>HTML</h6>
-                    <pre class="js-show-code user-select-all text-danger" for="xkcdLine">
-                        <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                    </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdLine">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
         </div>
-        <div class="row">
-            <div class="col-lg-6 px-0">
-                <h3>XY</h3>
-                <svg id="xkcdXY" class="js-xkcd js-xkcd-xy" data-js-config='{
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 px-0">
+        <h3>XY</h3>
+        <svg id="xkcdXY" class="js-xkcd js-xkcd-xy" data-js-config='{
                     "title": "Pokemon farms",
                     "xLabel": "Coordinate",
                     "yLabel": "Count",
@@ -231,17 +250,22 @@
                       "dotSize": 1
                     }
                   }' data-js-legend-position="upRight"></svg>
-                  <h6>CSS</h6>
-                  <p>None</p>
-                  <h6>HTML</h6>
-                    <pre class="js-show-code user-select-all text-danger" for="xkcdXY">
-                        <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                    </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdXY">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
+        </div>
+      </div>
 
-            <div class="col-lg-6 px-0">
-                <h3>Radar</h3>
-                <svg id="xkcdRadar" class="js-xkcd js-xkcd-radar" data-js-config='{
+      <div class="col-lg-6 px-0">
+        <h3>Radar</h3>
+        <svg id="xkcdRadar" class="js-xkcd js-xkcd-radar" data-js-config='{
                     "title": "What Tim is made of",
                     "data": {
                       "labels": ["a", "b", "e", "f", "g"],
@@ -251,18 +275,23 @@
                       "innerRadius": 0.5
                     }
                   }'></svg>
-                  <h6>CSS</h6>
-                  <p>None</p>
-                  <h6>HTML</h6>
-                    <pre class="js-show-code user-select-all text-danger" for="xkcdRadar">
-                        <span class="js-show-code-copied float-end me-4 ms-3 badge bg-success d-none">Copied!</span>
-                    </pre>
-            </div>
+        <h6>CSS</h6>
+        <p>None</p>
+        <div class="card js-show-code-card me-3" for="xkcdRadar">
+          <h5 class="card-header d-flex justify-content-between align-items-center">
+            HTML
+            <button type="button" class="btn-clipboard btn btn-secondary float-end"
+              title="Copy to clipboard">Copy</button>
+          </h5>
+          <pre class="text-danger card-body bg-light mb-0">
+          </pre>
         </div>
-
+      </div>
     </div>
 
-    <script src="app.bundle.min.js"></script>
+  </div>
+
+  <script src="app.bundle.min.js"></script>
 
 </body>
 
